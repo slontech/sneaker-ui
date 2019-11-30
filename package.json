@@ -1,0 +1,81 @@
+{
+  "name": "@slontech/sneaker-ui",
+  "version": "1.0.0",
+  "description": "Sneaker UI is a React component library",
+  "main": "index.js",
+  "author": "joshua.crass@gmail.com",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "build": "yarn clean-dist; webpack --config config/webpack.config.js",
+    "clean-dist": "rimraf ./dist",
+    "flow": "flow",
+    "format": "prettier --write 'src/**/*.js'",
+    "lint": "eslint src -c .eslintrc --ext js",
+    "prepublish": "yarn build",
+    "prettier-check": "lint-staged",
+    "prettier": "prettier",
+    "storybook": "start-storybook -p 9001 -c config/storybook",
+    "test:watch": "jest --watch",
+    "test": "jest"
+  },
+  "pre-commit": [
+    "test",
+    "lint"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@storybook/addon-knobs": "^5.2.7",
+    "@storybook/addon-storysource": "^5.2.7",
+    "@storybook/react": "^5.2.7",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-flowtype": "^4.5.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "file-loader": "^5.0.2",
+    "flow-bin": "^0.112.0",
+    "fs": "^0.0.1-security",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "path": "^0.12.7",
+    "prettier": "^1.19.1",
+    "style-loader": "^1.0.1",
+    "styled-theming": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "styled-components": "^4.4.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run test"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint"
+    ]
+  }
+}

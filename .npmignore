@@ -1,0 +1,17 @@
+.vscode
+config/
+node_modules/
+src/
+style/
+
+.babelrc
+.eslintignore
+.eslintrc
+.flowconfig
+.gitignore
+.npmignore
+.prettierignore
+.prettierrc
+
+yarn-error.log
+yarn.lock
