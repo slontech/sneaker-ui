@@ -7,7 +7,7 @@ type Props = {
 
 const Icon = (props: Props) => {
   const { children, className } = props;
-  return <i className={className}>{children}</i>;
+  return <span role="img" className={className}>{children}</span>;
 };
 
 export default Icon;
