@@ -1,6 +1,6 @@
 {
   "name": "@slontech/sneaker-ui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Sneaker UI is a React component library",
   "main": "index.js",
   "author": "joshua.crass@gmail.com",
@@ -11,15 +11,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/slontech/sneaker-ui"
+    "url": "git+https://github.com/slontech/sneaker-ui.git"
   },
   "scripts": {
-    "build": "yarn clean-dist; webpack --config config/webpack.config.js",
-    "clean-dist": "rimraf ./dist",
+    "build": "webpack --config config/webpack.config.js",
     "flow": "flow",
     "format": "prettier --write 'src/**/*.js'",
     "lint": "eslint src -c .eslintrc --ext js",
-    "prepublish": "yarn build",
     "prettier-check": "lint-staged",
     "prettier": "prettier",
     "storybook": "start-storybook -p 9001 -c config/storybook",
@@ -64,9 +62,9 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "styled-components": "^4.4.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1"
   },
   "husky": {
     "hooks": {
@@ -78,5 +76,14 @@
     "*.{js}": [
       "eslint"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/slontech/sneaker-ui/issues"
+  },
+  "homepage": "https://github.com/slontech/sneaker-ui#readme",
+  "keywords": [
+    "react",
+    "component",
+    "library"
+  ]
 }

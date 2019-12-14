@@ -10,7 +10,7 @@ const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 module.exports = {
-  appDist: resolveApp("dist"), // Built files end up here
+  projectRoot: resolveApp(appDirectory), // Built files end up here
   appConfig: resolveApp("config"), // config files
   appSrc: resolveApp("src"), // source
   appComponents: resolveApp("src/components") // Components
